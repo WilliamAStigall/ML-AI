@@ -314,10 +314,10 @@ def predict_testset(dataframe, model, log_dir):
         
     
     
-train_data_dir = r"C:\Users\rstig\Downloads\diabetic-retinopathy-detection\train\train"
-train_labels_dir = r"C:\Users\rstig\Downloads\diabetic-retinopathy-detection\trainLabels\trainLabels.csv"
-test_data_dir = r"C:\Users\rstig\Downloads\diabetic-retinopathy-detection\test\test"
-test_labels_dir = r"C:\Users\rstig\Downloads\diabetic-retinopathy-detection\retinopathy_solution.csv"
+train_data_dir = r"C:\Users\_\Downloads\diabetic-retinopathy-detection\train\train"
+train_labels_dir = r"C:\_\rstig\Downloads\diabetic-retinopathy-detection\trainLabels\trainLabels.csv"
+test_data_dir = r"C:\Users\_\Downloads\diabetic-retinopathy-detection\test\test"
+test_labels_dir = r"C:\Users\_\Downloads\diabetic-retinopathy-detection\retinopathy_solution.csv"
 # Set the display options
 
 train_dataframe = pd.read_csv(train_labels_dir, sep=',')
@@ -378,9 +378,9 @@ tuner = keras_tuner.BayesianOptimization(hypermodel, objective=objective, max_tr
 
 model = transfer_learning(train_dataframe,hypermodel)
 
-hypermodel = keras.models.load_model( custom_objects={"f1_score": f1_score},filepath=r"C:\Users\rstig\VS_Code_Projects\DR_Categorical_HyperModel.h5")
+hypermodel = keras.models.load_model( custom_objects={"f1_score": f1_score},filepath=r"C:\Users\_\VS_Code_Projects\DR_Categorical_HyperModel.h5")
 
-log_dir = r"C:\Users\rstig\VS_Code_Projects\logs\Test_Predictions_Cat"
+log_dir = r"C:\Users\_\VS_Code_Projects\logs\Test_Predictions_Cat"
 
 results = predict_testset(test_dataframe,hypermodel,log_dir)
 
